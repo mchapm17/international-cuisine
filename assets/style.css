@@ -1,0 +1,16 @@
+html {
+  background-color: #FFF3D9;
+}
+
+section {
+  background-color: #DC4731;
+  margin: 0;
+  padding: 0;
+}
+section .header-text {
+  color: #FFF3D9;
+}
+
+form {
+  align-items: auto;
+}
