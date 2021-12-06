@@ -1,0 +1,29 @@
+:root {
+    --red-orange: #DC4731;
+    --cream: #FFF3D9;
+    --burnt-orange:#B8390E;
+    --red-rose: #3B0918;
+}
+
+section.details-page {
+    background-color: var(--cream);
+    height: 100vh;
+}
+
+.details-page {
+    padding-top: 2rem;
+}
+
+/* .details-page .dark-text-color {
+    color: var(--red-rose) !important;
+} */
+
+.details-page .header-spacing {
+    margin-bottom: .5rem;
+}
+
+.details-page .img-container img#profile-img {
+    margin-bottom: 1rem;
+    padding-top: 2rem;
+}
+
