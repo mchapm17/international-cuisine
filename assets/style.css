@@ -14,3 +14,8 @@ section .header-text {
 form {
   align-items: auto;
 }
+
+/* possible size for images */
+img{
+  width: 150px;
+}

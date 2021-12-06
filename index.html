@@ -26,29 +26,30 @@
             </div>
           </div>
           <select id="format" class="form-control">
-            <option value="Beef" data-food-type="meal"></option>Beef</option>
-            <option value="Breakfast" data-food-type="meal">Breakfast</option>
-            <option value="Chicken" data-food-type="meal">Chicken</option>
-            <option value="Dessert" data-food-type="meal">Dessert</option>
-            <option value="Goat" data-food-type="meal">Goat</option>
-            <option value="Lamb" data-food-type="meal">Lamb</option>
-            <option value="Miscellaneous" data-food-type="meal">Miscellaneous</option>
-            <option value="Pasta" data-food-type="meal">Pasta</option>
-            <option value="Pork" data-food-type="meal">Pork</option>
-            <option value="Seafood" data-food-type="meal">Seafood</option>
-            <option value="Side" data-food-type="meal">Side</option>
-            <option value="Starter" data-food-type="meal">Starter</option>
-            <option value="Vegan" data-food-type="meal">Vegan</option>
-            <option value="Vegetaian" data-food-type="meal">Vegetaian</option>
-            <option value="Alcoholic" data-food-type="beverage">BEVERAGE-Alcoholic</option>
-            <option value="Non Alcoholic" data-food-type="beverage">BEVERAGE-Non Alcoholic</option>
-            <option value="Optional Alcohol" data-food-type="beverage">BEVERAGE-Optional Alcohol</option>
+            <!-- changed data-type-food and data-type-beverage to data-type so i could pull the info in script.js file  -->
+            <option value="Beef" data-type="meal"></option>Beef</option>
+            <option value="Breakfast" data-type="meal">Breakfast</option>
+            <option value="Chicken" data-type="meal">Chicken</option>
+            <option value="Dessert" data-type="meal">Dessert</option>
+            <option value="Goat" data-type="meal">Goat</option>
+            <option value="Lamb" data-type="meal">Lamb</option>
+            <option value="Miscellaneous" data-type="meal">Miscellaneous</option>
+            <option value="Pasta" data-type="meal">Pasta</option>
+            <option value="Pork" data-type="meal">Pork</option>
+            <option value="Seafood" data-type="meal">Seafood</option>
+            <option value="Side" data-type="meal">Side</option>
+            <option value="Starter" data-type="meal">Starter</option>
+            <option value="Vegan" data-type="meal">Vegan</option>
+            <option value="Vegetaian" data-type="meal">Vegetaian</option>
+            <option value="Alcoholic" data-type="beverage">BEVERAGE-Alcoholic</option>
+            <option value="Non Alcoholic" data-type="beverage">BEVERAGE-Non Alcoholic</option>
+            <option value="Optional Alcohol" data-type="beverage">BEVERAGE-Optional Alcohol</option>
           </select>
         </form>
       </div>
     </section>
-    <section>
-      <ul class="food-beverage-list">
+    <section id='display'>
+      <!-- <ul class="food-beverage-list">
         <li class="food-beverage-list-item">
           <a href="#">
           <div>
@@ -59,9 +60,10 @@
           </div>
         </a>
         </li>
-      </ul>
+      </ul> -->
 
     </section>
   </body>
   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  <script src="./assets/script.js"></script>
 </html>
