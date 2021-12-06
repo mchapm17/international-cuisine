@@ -10,20 +10,21 @@ var food = function(food){
         })
         .then(function(data){
             for(var i = 0; i< data.meals.length; i++){
-            var container = document.createElement('div');
+            var aTagEl = document.createElement('a');
+            aTagEl.setAttribute('href', `/assets/html/details.html?food-type=${food}&food-id=${data.meals[i].idMeal}`);
+            var container = document.createElement('div'); 
             container.setAttribute('class', 'column');
             var pic = document.createElement('img');
             pic.setAttribute('src', `${data.meals[i].strMealThumb}`)
             var title = document.createElement('p');
             title.textContent = data.meals[i].strMeal;
             container.append(pic);
-            container.append(title)
-            display.append(container);
-
+            container.append(title);
+            aTagEl.append(container);
+            display.append(aTagEl);
+           
             }
-            
         })
-
 }
 
 var singleMeal = function(nameID){
@@ -47,14 +48,17 @@ var drink = function (drink){
         })
         .then(function (data){
             for(var i = 0; i< data.drinks.length; i++){
-                var container = document.createElement('div');
+                var aTagEl = document.createElement('a');
+                aTagEl.setAttribute('href', `/assets/html/details.html?drink-type=${drink}&drink-id=${data.drinks[i].idDrink}`);
+                var container = document.createElement('div');  
                 container.setAttribute('class', 'column');
                 var pic = document.createElement('img');
                 pic.setAttribute('src', `${data.drinks[i].strDrinkThumb}`)
                 var title = document.createElement('p');
                 title.textContent = data.drinks[i].strDrink;
                 container.append(pic);
-                container.append(title)
+                container.append(title);
+                aTagEl.append(container);
                 display.append(container);
     
                 }
