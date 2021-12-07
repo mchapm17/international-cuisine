@@ -29,18 +29,6 @@ var food = function (food) {
     });
 };
 
-var singleMeal = function (nameID) {
-  var mealUrl = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${nameID}`;
-
-  fetch(mealUrl)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      console.log(data);
-    });
-};
-
 var drink = function (drink) {
   var drinkUrl = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=${drink}`;
 
@@ -70,32 +58,27 @@ var drink = function (drink) {
     });
 };
 
-var singleDrink = function (name) {
-  var drinkUrl = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${name}`;
+function searchConsumable(val) {
 
-  fetch(drinkUrl)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      console.log(data);
-    });
-};
+
+  display.textContent = "";
+
+  const foodType = document.querySelector(
+    `#format option[value="${val}"`
+  )?.dataset.type;
+
+  if (val) {
+    if (foodType === "meal") {
+      food(val);
+    } else {
+      drink(val);
+    }
+  }
+}
 
 selection.addEventListener("change", function (event) {
   event.preventDefault();
-  display.textContent = "";
-
-  const selectedVal = event.target.value;
-  const foodType = document.querySelector(
-    `#format option[value="${selectedVal}"`
-  )?.dataset.type;
-
-  if (selectedVal) {
-    if (foodType === "meal") {
-      food(selectedVal);
-    } else {
-      drink(selectedVal);
-    }
-  }
+  searchConsumable(event.target.value);
 });
+
+
