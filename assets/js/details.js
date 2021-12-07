@@ -1,10 +1,27 @@
 const profileImgEL = document.querySelector("#profile-img");
 const consumableTitleEl = document.querySelector("#consumable-title");
-const consumableTypeEl = document.querySelector("#consumable-type");
+const consumableEl = document.querySelector("#consumable-type");
 const ingredientsListEl = document.querySelector(".ingredients-list");
 const instructionsEl = document.querySelector(".instructions");
 
-function detailsInfo(consumableType) {}
+function ingredientAndMeasurementInfo() {
+
+    const consumable = data.meals[0] || data.drinks[0];
+    let looping = true;
+    let i = 1;
+    while (looping) {
+      const strIngredient = consumable[`strIngredient${i}`];
+      const strMeasure = consumable[`strMeasure${i}`];
+      if (strIngredient) {
+        const ingredientListItem = document.createElement("li");
+        ingredientListItem.textContent = `${strIngredient} ${strMeasure}`;
+        ingredientsListEl.appendChild(ingredientListItem);
+        i++;
+      } else {
+        looping = false;
+      }
+    }
+}
 
 function displayDrinkDetails(drinkID) {
   const drinkUrl = `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${drinkID}`;
@@ -14,20 +31,14 @@ function displayDrinkDetails(drinkID) {
       return response.json();
     })
     .then(function (data) {
-      console.log(data);
-      // for(var i = 0; i< data.drinks.length; i++){
-      //     var container = document.createElement('div');
-      //     container.setAttribute('class', 'column');
-      //     var pic = document.createElement('img');
-      //     pic.setAttribute('src', `${data.drinks[i].strDrinkThumb}`)
-      //     var title = document.createElement('p');
-      //     title.textContent = data.drinks[i].strDrink;
-      //     container.append(pic);
-      //     container.append(title)
-      //     display.append(container);
+    const { strDrink, strDrinkThumb, strAlcoholic, strInstructions } = data.drinks[0];
 
-      //     }
-      // console.log(data);
+    profileImgEL.src = strDrinkThumb;
+    consumableTitleEl.textContent = strDrink;
+    consumableEl.textContent = strAlcoholic;
+    instructionsEl.textContent = strInstructions;
+
+      ingredientAndMeasurementInfo();
     });
 }
 
@@ -43,23 +54,10 @@ function displayFoodDetails(foodId) {
 
       profileImgEL.src = strMealThumb;
       consumableTitleEl.textContent = strMeal;
-      consumableTypeEl.textContent = strArea;
+      consumableEl.textContent = strArea;
       instructionsEl.textContent = strInstructions;
 
-      let looping = true;
-      let i = 1;
-      while (looping) {
-        const strIngredient = data.meals[0][`strIngredient${i}`];
-        const strMeasure = data.meals[0][`strMeasure${i}`];
-        if (strIngredient) {
-          const ingredientListItem = document.createElement("li");
-          ingredientListItem.textContent = `${strIngredient} ${strMeasure}`;
-          ingredientsListEl.appendChild(ingredientListItem);
-          i++;
-        } else {
-          looping = false;
-        }
-      }
+      ingredientAndMeasurementInfo();
     });
 }
 
