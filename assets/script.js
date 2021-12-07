@@ -50,7 +50,7 @@ var drink = function (drink) {
             for (var i = 0; i < data.drinks.length; i++) {
                 var aTagEl = document.createElement('a');
                 console.log(data)
-                aTagEl.setAttribute('href', `./assets/html/details.html?food-type=${food}&food-id=${data.drinks[i].idDrink}`);
+                aTagEl.setAttribute('href', `./assets/html/details.html?drink-type=${drink}&drink-id=${data.drinks[i].idDrink}`);
                 var container = document.createElement('div');
                 container.setAttribute('class', 'column');
                 var pic = document.createElement('img');

@@ -4,9 +4,8 @@ const consumableEl = document.querySelector("#consumable-type");
 const ingredientsListEl = document.querySelector(".ingredients-list");
 const instructionsEl = document.querySelector(".instructions");
 
-function ingredientAndMeasurementInfo() {
-
-    const consumable = data.meals[0] || data.drinks[0];
+function ingredientAndMeasurementInfo(data) {
+    const consumable = data?.meals?.[0] || data?.drinks?.[0];
     let looping = true;
     let i = 1;
     while (looping) {
@@ -38,7 +37,7 @@ function displayDrinkDetails(drinkID) {
     consumableEl.textContent = strAlcoholic;
     instructionsEl.textContent = strInstructions;
 
-      ingredientAndMeasurementInfo();
+      ingredientAndMeasurementInfo(data);
     });
 }
 
@@ -57,7 +56,7 @@ function displayFoodDetails(foodId) {
       consumableEl.textContent = strArea;
       instructionsEl.textContent = strInstructions;
 
-      ingredientAndMeasurementInfo();
+      ingredientAndMeasurementInfo(data);
     });
 }
 
@@ -76,7 +75,6 @@ function displayConsumableItemDetails() {
     displayDrinkDetails(drinkId);
   }
 
-  console.log("foodType", foodType, "drinkType", drinkType);
   if (!foodType && !drinkType) {
     // go back to previous page
     console.log("No type added");
