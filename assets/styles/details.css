@@ -5,9 +5,16 @@
     --red-rose: #3B0918;
 }
 
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 section.details-page {
     background-color: var(--cream);
-    height: 100vh;
+    min-height: 100vh;
+    margin-bottom: 0;
 }
 
 .details-page {
@@ -15,6 +22,10 @@ section.details-page {
 }
 
 .details-page .header-spacing {
+    margin-bottom: .5rem;
+}
+
+.details-page .ingredients-list {
     margin-bottom: .5rem;
 }
 
