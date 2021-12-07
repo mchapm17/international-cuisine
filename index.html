@@ -19,7 +19,7 @@
         <form id="form" class="is-mobile">
           <div class="field has-addons column is-three-fifths is-offset-one-fifth">
             <div class="control">
-              <input list="format" id="text-search" class="input" placeholder="Search..." type="text"/>
+              <input list="format" id="text-search" class="input" placeholder="Search..." type="text" autocomplete="off"/>
               <datalist id="format" class="form-control">
                 <!-- changed data-type-food and data-type-beverage to data-type so i could pull the info in script.js file  -->
                 <option value="Beef" data-type="meal">Beef</option>
@@ -41,9 +41,9 @@
                 <option value="Optional Alcohol" data-type="beverage">BEVERAGE-Optional Alcohol</option>
               </datalist>
             </div>
-            <div class="control">
+            <!-- <div class="control">
               <input id="submit-btn" class="button" type="submit"/>
-            </div>
+            </div> -->
           </div>
         </form>
         <div id="btn-list">Previous selected items:</div>

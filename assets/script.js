@@ -30,18 +30,6 @@ var food = function (food) {
     });
 };
 
-var singleMeal = function (nameID) {
-  var mealUrl = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${nameID}`;
-
-  fetch(mealUrl)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      console.log(data);
-    });
-};
-
 var drink = function (drink) {
   var drinkUrl = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=${drink}`;
 
@@ -70,17 +58,9 @@ var drink = function (drink) {
     });
 };
 
-var singleDrink = function (name) {
-  var drinkUrl = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${name}`;
+function searchConsumable(val) {
 
-  fetch(drinkUrl)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      console.log(data);
-    });
-};
+
 
 
 var prevList = JSON.parse(localStorage.getItem('itemObj') || JSON.stringify({items: []}));
@@ -114,18 +94,26 @@ var prevList = JSON.parse(localStorage.getItem('itemObj') || JSON.stringify({ite
 
 selection.addEventListener("change", function (event) {
   event.preventDefault();
+
+
   display.textContent = "";
 
-  const selectedVal = event.target.value;
   const foodType = document.querySelector(
-    `#format option[value="${selectedVal}"`
+    `#format option[value="${val}"`
   )?.dataset.type;
 
-  if (selectedVal) {
+  if (val) {
     if (foodType === "meal") {
-      food(selectedVal);
+      food(val);
     } else {
-      drink(selectedVal);
+      drink(val);
     }
   }
+}
+
+selection.addEventListener("change", function (event) {
+  event.preventDefault();
+  searchConsumable(event.target.value);
 });
+
+
