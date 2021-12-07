@@ -1,5 +1,6 @@
 var selection = document.querySelector('#format');
 var display = document.querySelector('#display');
+var foodForm = document.getElementById('foodForm')
 
 var food = function (food) {
     var foodUrl = `https://www.themealdb.com/api/json/v1/1/filter.php?c=${food}`;
@@ -89,3 +90,13 @@ selection.addEventListener('change', function (event) {
         drink(selection.value);
     }
 })
+foodForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    console.log('form Submitted');
+    var textSearch = document.getElementById('text-search').value
+    console.log(textSearch)
+
+})
+
+
+
