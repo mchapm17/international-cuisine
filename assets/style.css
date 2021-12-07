@@ -4,7 +4,7 @@ html {
 
 section {
   background-color: #DC4731;
-  margin: 0;
+  margin: 40px 40px 40px 40px;
   padding: 0;
 }
 section .header-text {
