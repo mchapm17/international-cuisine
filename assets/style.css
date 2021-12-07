@@ -19,3 +19,15 @@ form {
 img{
   width: 150px;
 }
+
+.columns {
+  flex-wrap:wrap;
+}
+
+.column {
+  width:200px;
+}
+
+#display {
+  padding-left: 50px;
+}
