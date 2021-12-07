@@ -1,6 +1,6 @@
 var selection = document.querySelector("#text-search");
 var display = document.querySelector("#display");
-var btnList = document.querySelector('#btn-list');
+var btnList = document.querySelector("#btn-list");
 
 var food = function (food) {
   var foodUrl = `https://www.themealdb.com/api/json/v1/1/filter.php?c=${food}`;
@@ -58,49 +58,50 @@ var drink = function (drink) {
     });
 };
 
-function searchConsumable(val) {
-
-
-
-
-var prevList = JSON.parse(localStorage.getItem('itemObj') || JSON.stringify({items: []}));
-    if(prevList.items.length <= 5){
-        for(var i = 0; i < prevList.items.length; i++){
-            if(document.querySelector(`#format option[value="${prevList.items[i].item1}"` )?.dataset.type === "meal"){
-                //console.log(prevList.items[i].item1)
-                var a2TagEl = document.createElement("a");
-                a2TagEl.setAttribute("href",`./assets/html/details.html?food-type=${prevList.items[i].item1}&food-id=${prevList.items[i].item2}`);
-                var btn = document.createElement('button');
-                btn.setAttribute('class', 'list-btns button');
-                btn.textContent = prevList.items[i].item1;
-                a2TagEl.append(btn);
-                btnList.append(a2TagEl);
-            } else{
-                //console.log('winner winner');
-                var a2TagEl = document.createElement("a");
-                a2TagEl.setAttribute("href",`./assets/html/details.html?drink-type=${prevList.items[i].item1}&drink-id=${prevList.items[i].item2}`);
-                var btn = document.createElement('button');
-                btn.setAttribute('class', 'list-btns button');
-                btn.textContent = prevList.items[i].item1;
-                a2TagEl.append(btn);
-                btnList.append(a2TagEl);
-            }
-            }       
+var prevList = JSON.parse(
+  localStorage.getItem("itemObj") || JSON.stringify({ items: [] })
+);
+if (prevList.items.length <= 5) {
+  for (var i = 0; i < prevList.items.length; i++) {
+    if (
+      document.querySelector(
+        `#format option[value="${prevList.items[i].item1}"`
+      )?.dataset.type === "meal"
+    ) {
+      //console.log(prevList.items[i].item1)
+      var a2TagEl = document.createElement("a");
+      a2TagEl.setAttribute(
+        "href",
+        `./assets/html/details.html?food-type=${prevList.items[i].item1}&food-id=${prevList.items[i].item2}`
+      );
+      var btn = document.createElement("button");
+      btn.setAttribute("class", "list-btns button");
+      btn.textContent = prevList.items[i].item1;
+      a2TagEl.append(btn);
+      btnList.append(a2TagEl);
     } else {
-        localStorage.setItem("itemObj", JSON.stringify({items: []}));
-
+      //console.log('winner winner');
+      var a2TagEl = document.createElement("a");
+      a2TagEl.setAttribute(
+        "href",
+        `./assets/html/details.html?drink-type=${prevList.items[i].item1}&drink-id=${prevList.items[i].item2}`
+      );
+      var btn = document.createElement("button");
+      btn.setAttribute("class", "list-btns button");
+      btn.textContent = prevList.items[i].item1;
+      a2TagEl.append(btn);
+      btnList.append(a2TagEl);
     }
+  }
+} else {
+  localStorage.setItem("itemObj", JSON.stringify({ items: [] }));
+}
 
-
-selection.addEventListener("change", function (event) {
-  event.preventDefault();
-
-
+function searchConsumable(val) {
   display.textContent = "";
 
-  const foodType = document.querySelector(
-    `#format option[value="${val}"`
-  )?.dataset.type;
+  const foodType = document.querySelector(`#format option[value="${val}"`)
+    ?.dataset.type;
 
   if (val) {
     if (foodType === "meal") {
@@ -115,5 +116,3 @@ selection.addEventListener("change", function (event) {
   event.preventDefault();
   searchConsumable(event.target.value);
 });
-
-
