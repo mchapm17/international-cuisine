@@ -66,12 +66,26 @@ function displayConsumableItemDetails() {
   const foodId = urlParams.get("food-id");
   const drinkType = urlParams.get("drink-type");
   const drinkId = urlParams.get("drink-id");
+  var prevList = localStorage.getItem('itemObj') || JSON.stringify({items: []});
+  var prev = JSON.parse(prevList);
 
   if (foodType) {
+    var itemObj = {
+      item1: foodType,
+      item2: foodId
+    };
+    prev.items.push(itemObj);
+    localStorage.setItem("itemObj", JSON.stringify(prev));
     displayFoodDetails(foodId);
   }
 
   if (drinkType) {
+    var itemObj1 = {
+      item1: drinkType,
+      item2: drinkId
+    }
+    prev.items.push(itemObj1);
+    localStorage.setItem("itemObj", JSON.stringify(prev));
     displayDrinkDetails(drinkId);
   }
 
