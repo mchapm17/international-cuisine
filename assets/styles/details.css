@@ -30,7 +30,7 @@ section.details-page {
     list-style-position: inside;
 }
 
-.details-page .img-container img#profile-img {
+.details-page .img-container img.profile-img {
     margin-bottom: 1rem;
     margin-top: 2rem;
     width: 250px;
@@ -43,7 +43,15 @@ section.details-page {
 }
 
 @media screen and (max-width: 768px) {
-    .details-page .img-container img#profile-img {
+    .details-page .img-container img.profile-img {
         margin: 2rem auto 1rem;
+    }
+
+    .details-page .header-text-container {
+        padding-left: 1rem;
+    }
+
+    .details-page .description-container {
+        padding-left: 2rem;
     }
 }
