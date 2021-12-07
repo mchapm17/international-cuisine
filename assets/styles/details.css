@@ -21,6 +21,7 @@ section.details-page {
 .details-page .img-container img#profile-img {
     margin-bottom: 1rem;
     margin-top: 2rem;
+    width: 250px;
 }
 
 

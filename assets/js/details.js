@@ -6,6 +6,9 @@ const ingredientsListEl = document.querySelector('.ingredients-list');
 const instructionsEl = document.querySelector('.instructions');
 
 
+function detailsInfo(consumableType) {
+
+}
 
 function displayDrinkDetails(drinkID) {
 
@@ -43,19 +46,33 @@ function displayFoodDetails(foodId) {
             return response.json();
         })
         .then(function(data){
-            console.log(data);
-            // for(var i = 0; i< data.meals.length; i++){
-            // var container = document.createElement('div');
-            // container.setAttribute('class', 'column');
-            // var pic = document.createElement('img');
-            // pic.setAttribute('src', `${data.meals[i].strMealThumb}`)
-            // var title = document.createElement('p');
-            // title.textContent = data.meals[i].strMeal;
-            // container.append(pic);
-            // container.append(title)
-            // display.append(container);
 
-            // }
+            const {strMeal, strMealThumb, strArea, strInstructions} = data.meals[0];
+            let looping = true;
+            let i = 1;
+            const strIngredient = data.meals[0][`strIngredient${i}`];
+            const strMeasure = data.meals[0][`strMeasure${i}`];
+
+            profileImgEL.src = strMealThumb;
+            consumableTitleEl.textContent = strMeal;
+            consumableTypeEl.textContent = strArea;
+            ingredientsListEl.textContent = strInstructions;
+
+
+            // console.log(data);
+            
+            // console.log(data.meals[0][`strIngredient${i}`]);
+            while(looping) {
+                if (strIngredient) {
+                    const ingredientListItem = document.createElement('li');
+                    ingredientListItem.textContent = `${strIngredient} ${strMeasure}`;
+                    ingredientsListEl.appendChild(ingredientListItem);
+                     i++;
+                } else {
+                    looping = false;
+                }
+            }
+            
             
         })
 }
