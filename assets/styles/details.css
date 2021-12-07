@@ -21,6 +21,11 @@ section.details-page {
     padding-top: 2rem;
 }
 
+.details-page .back-btn {
+    background-color: var(--red-orange);
+    color: var(--cream);
+}
+
 .details-page .header-spacing {
     margin-bottom: .5rem;
 }
@@ -36,13 +41,11 @@ section.details-page {
     width: 250px;
 }
 
-
-
-@media screen and (max-width: 992px) {
-
-}
-
 @media screen and (max-width: 768px) {
+    .details-page .back-btn {
+        margin-left: 1rem;
+    }
+
     .details-page .img-container img.profile-img {
         margin: 2rem auto 1rem;
     }
