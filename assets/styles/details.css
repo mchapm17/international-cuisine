@@ -27,6 +27,7 @@ section.details-page {
 
 .details-page .ingredients-list {
     margin-bottom: .5rem;
+    list-style-position: inside;
 }
 
 .details-page .img-container img#profile-img {
