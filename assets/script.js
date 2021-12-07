@@ -1,4 +1,4 @@
-var selection = document.querySelector('#format');
+var selection = document.querySelector('#text-search');
 var display = document.querySelector('#display');
 
 var food = function (food) {
@@ -81,7 +81,9 @@ var singleDrink = function (name) {
 selection.addEventListener('change', function (event) {
     event.preventDefault();
     display.textContent = '';
-    var foodType = event.target.options[event.target.selectedIndex].dataset.type;
+    
+    const selectedVal = event.target.value;
+    const foodType = document.querySelector(`#format option[value="${selectedVal}"`).dataset.type;
 
     if (foodType === 'meal') {
         food(selection.value);
