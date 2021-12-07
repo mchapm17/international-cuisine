@@ -16,16 +16,32 @@
     <section class="details-page columns is-tablet">
       <div class="column is-3-tablet is-offset-2">
         <div class="img-container">
-          <img id="profile-img" class="is-block" src="https://via.placeholder.com/150" />
+          <img
+            id="profile-img"
+            class="is-block"
+            src="https://via.placeholder.com/150"
+          />
         </div>
-        <h1 class="header-spacing"><strong id="food-title">Food Title</strong></h1>
-        <h2 class="header-spacing">Food Type: <span></span></h2>
+        <h1 class="header-spacing">
+          <strong id="consumable-title">Food Title</strong>
+        </h1>
+        <h2 class="header-spacing" id="consumable-type">Type</h2>
       </div>
-      <div class="column is-6-tablet">2</div>
+      <div class="column is-6-tablet">
+        <h2 class="header-spacing">
+          <strong>Ingredients</strong>
+        </h2>
+        <ol class="ingredients-list"></ol>
+        <h2 class="header-spacing">
+          <strong>Instructions</strong>
+        </h2>
+        <article class="instructions"></article>
+      </div>
     </section>
     <script
       defer
       src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
     ></script>
+    <script src="./../js/details.js"></script>
   </body>
 </html>

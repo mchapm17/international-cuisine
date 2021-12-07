@@ -5,25 +5,45 @@
     --red-rose: #3B0918;
 }
 
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 section.details-page {
     background-color: var(--cream);
-    height: 100vh;
+    min-height: 100vh;
+    margin-bottom: 0;
 }
 
 .details-page {
     padding-top: 2rem;
 }
 
-/* .details-page .dark-text-color {
-    color: var(--red-rose) !important;
-} */
-
 .details-page .header-spacing {
     margin-bottom: .5rem;
 }
 
-.details-page .img-container img#profile-img {
-    margin-bottom: 1rem;
-    padding-top: 2rem;
+.details-page .ingredients-list {
+    margin-bottom: .5rem;
+    list-style-position: inside;
 }
 
+.details-page .img-container img#profile-img {
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+    width: 250px;
+}
+
+
+
+@media screen and (max-width: 992px) {
+
+}
+
+@media screen and (max-width: 768px) {
+    .details-page .img-container img#profile-img {
+        margin: 2rem auto 1rem;
+    }
+}
