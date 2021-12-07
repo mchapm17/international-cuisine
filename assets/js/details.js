@@ -1,6 +1,6 @@
-const profileImgEL = document.querySelector("#profile-img");
-const consumableTitleEl = document.querySelector("#consumable-title");
-const consumableEl = document.querySelector("#consumable-type");
+const profileImgEL = document.querySelector(".profile-img");
+const consumableTitleEl = document.querySelector(".consumable-title");
+const consumableEl = document.querySelector(".consumable-type");
 const ingredientsListEl = document.querySelector(".ingredients-list");
 const instructionsEl = document.querySelector(".instructions");
 
@@ -76,8 +76,8 @@ function displayConsumableItemDetails() {
   }
 
   if (!foodType && !drinkType) {
-    // go back to previous page
-    console.log("No type added");
+    // go back to previous page if no query params are present
+    window.history.back();
   }
 }
 
