@@ -32,4 +32,6 @@
 ![International Cuisine Detail Page](./assets/images/i-c-02.gif)
 
 ## Final Product
-[Final](https://mchapm17.github.io/international-cuisine/)
+[Final](https://mchapm17.github.io/international-cuisine/)  
+
+[Repo](https://github.com/mchapm17/international-cuisine)
