@@ -19,3 +19,27 @@ form {
 img{
   width: 150px;
 }
+
+.columns {
+  flex-wrap:wrap;
+}
+
+.column {
+  width:200px;
+}
+
+#display {
+  background-color:#FFF3D9;
+  padding-left: 50px;
+  margin-top: 50px;
+}
+
+.list-btns {
+  margin: 0 30px;
+}
+
+#btn-list{
+  padding-top: 30px;
+  color: #FFF3D9;
+  font-size: 24px;
+}
