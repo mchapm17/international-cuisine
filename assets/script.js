@@ -76,7 +76,7 @@ if (prevList.items.length <= 5) {
       );
       var btn = document.createElement("button");
       btn.setAttribute("class", "list-btns button");
-      btn.textContent = prevList.items[i].item1;
+      btn.textContent = prevList.items[i].item3;
       a2TagEl.append(btn);
       btnList.append(a2TagEl);
     } else {
@@ -88,7 +88,7 @@ if (prevList.items.length <= 5) {
       );
       var btn = document.createElement("button");
       btn.setAttribute("class", "list-btns button");
-      btn.textContent = prevList.items[i].item1;
+      btn.textContent = prevList.items[i].item3;
       a2TagEl.append(btn);
       btnList.append(a2TagEl);
     }
