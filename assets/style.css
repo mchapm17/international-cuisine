@@ -43,7 +43,8 @@ img {
   justify-content: normal
 }
 
-#btn-list {
+#btn-list{
+  display:none;
   padding-top: 30px;
   color: #FFF3D9;
   font-size: 24px;
