@@ -66,6 +66,7 @@ var prevList = JSON.parse(
 
  
   for (var i = 0; i < prevList.items.length; i++) {
+    btnList.style.display='block';
     if (itemArray.includes(prevList.items[i].item3)) {
       continue;
     }
