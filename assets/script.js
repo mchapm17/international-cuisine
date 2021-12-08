@@ -58,11 +58,18 @@ var drink = function (drink) {
     });
 };
 
+var itemArray =[];
+
 var prevList = JSON.parse(
   localStorage.getItem("itemObj") || JSON.stringify({ items: [] })
 );
-if (prevList.items.length <= 5) {
+
+ 
   for (var i = 0; i < prevList.items.length; i++) {
+    if (itemArray.includes(prevList.items[i].item3)) {
+      continue;
+    }
+   
     if (
       document.querySelector(
         `#format option[value="${prevList.items[i].item1}"`
@@ -77,6 +84,7 @@ if (prevList.items.length <= 5) {
       var btn = document.createElement("button");
       btn.setAttribute("class", "list-btns button");
       btn.textContent = prevList.items[i].item3;
+      itemArray.push(prevList.items[i].item3);
       a2TagEl.append(btn);
       btnList.append(a2TagEl);
     } else {
@@ -89,13 +97,15 @@ if (prevList.items.length <= 5) {
       var btn = document.createElement("button");
       btn.setAttribute("class", "list-btns button");
       btn.textContent = prevList.items[i].item3;
+      itemArray.push(prevList.items[i].item3);
       a2TagEl.append(btn);
       btnList.append(a2TagEl);
     }
+    if(itemArray.length > 4){
+      localStorage.setItem("itemObj", JSON.stringify({ items: [] }));
+    }
   }
-} else {
-  localStorage.setItem("itemObj", JSON.stringify({ items: [] }));
-}
+
 
 function searchConsumable(val) {
   display.textContent = "";
