@@ -3,6 +3,7 @@
 
 - [Usage](#usage)
 - [Description](#description)
+- [Technology Used](#technology-used)
 - [Visuals](#visuals)
 - [Final product](#final-product)
 
@@ -14,6 +15,18 @@
    The option to go back is avalible to take the user back to the selector to make  
    a new search or to see there last 5 item searches.
  
+## Technology Used  
+  Base Languages:  
+    HTML
+    CSS
+    JavaScript
+
+  CSS styling framework: "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";  
+
+  API's:  
+    https://www.themealdb.com/  
+    https://www.thecocktaildb.com/  
+    
 
 ## Description
    The website runs using to data base API's that provide the information  
